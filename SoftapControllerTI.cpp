@@ -49,6 +49,17 @@ SoftapController::SoftapController() {
 SoftapController::~SoftapController() {
 }
 
+// Engle, 添加WLAN热点支持
+int SoftapController::startDriver(char *iface) {
+    ALOGD("softAp startDriver called");
+    return 0;
+}
+
+int SoftapController::stopDriver(char *iface) {
+    ALOGD("softAp stopDriver called");
+    return 0;
+}
+
 int SoftapController::isIfUp(const char *ifname) {
     int sock, ret;
     struct ifreq ifr;

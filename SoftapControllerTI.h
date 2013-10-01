@@ -36,7 +36,8 @@
 #define HOSTAPD_START_DELAY_US  100000
 #define HOSTAPD_STOP_DELAY_US 100000
 
-#define AP_INTERFACE  "wlan0"
+// Engle, 添加WLAN热点支持
+#define AP_INTERFACE  "tiap0"
 
 class SoftapController {
     bool mHostapdStarted;
@@ -49,6 +50,9 @@ public:
     SoftapController();
     virtual ~SoftapController();
 
+// Engle, 添加WLAN热点支持
+    int startDriver(char *iface);
+    int stopDriver(char *iface);
     int startSoftap();
     int stopSoftap();
     bool isSoftapStarted();
@@ -58,3 +62,4 @@ public:
 };
 
 #endif
+
